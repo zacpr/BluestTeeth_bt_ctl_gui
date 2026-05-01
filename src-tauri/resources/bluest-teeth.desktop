@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=BluestTeeth
+Comment=A cool GUI for bluetoothctl
+Exec=bluest-teeth
+Icon=bluest-teeth
+Type=Application
+Categories=System;Settings;HardwareSettings;
+Keywords=bluetooth;wireless;connectivity;
+Terminal=false
+StartupNotify=true

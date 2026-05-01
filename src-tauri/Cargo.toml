@@ -1,0 +1,31 @@
+[package]
+name = "bluest-teeth"
+version = "0.1.0"
+description = "A cool and fun GUI for bluetoothctl"
+authors = ["BluestTeeth Team"]
+license = "MIT"
+repository = ""
+edition = "2021"
+rust-version = "1.70"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.35", features = ["full"] }
+regex = "1.10"
+once_cell = "1.19"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.11"
+tauri-plugin-dialog = "2"
+reqwest = { version = "0.13.3", features = ["json", "rustls"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

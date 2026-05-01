@@ -1,0 +1,67 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "BluestTeeth",
+  "version": "0.1.0",
+  "identifier": "com.bluestteeth.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "BluestTeeth",
+        "width": 1100,
+        "height": 750,
+        "minWidth": 900,
+        "minHeight": 600,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "transparent": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb", "rpm", "msi"],
+    "category": "Utility",
+    "shortDescription": "A cool GUI for bluetoothctl",
+    "longDescription": "BluestTeeth is a modern, visually striking GUI for managing Bluetooth devices via bluetoothctl. Features animated discovery, one-click pairing, and a customizable Electric Aurora interface.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "linux": {
+      "deb": {
+        "depends": ["bluetooth", "bluez"],
+        "desktopTemplate": "./resources/bluest-teeth.desktop"
+      },
+      "rpm": {
+        "depends": ["bluez"],
+        "desktopTemplate": "./resources/bluest-teeth.desktop"
+      }
+    },
+    "windows": {
+      "wix": {
+        "language": ["en-US"]
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "10.13"
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}

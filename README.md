@@ -219,5 +219,6 @@ MIT License - see LICENSE file for details.
 * Built with [Tauri](https://tauri.app/) - Rust + Web technologies
 * UI powered by [Svelte](https://svelte.dev/)
 * Bluetooth integration via `bluetoothctl` and BlueZ
+* all for you damien!
 
 

@@ -27,20 +27,15 @@ jobs:
         cache: 'npm'
     
     - name: Install Rust
-      uses: dtolnay/rust-action@stable
+      uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
-        targets: ${{ matrix.target }}
+        toolchain: stable
+        target: ${{ matrix.target }}
     
     - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
-    
-    - name: Install Rust
-      uses: actions-rust-lang/setup-rust-toolchain@v1
-      with:
-        toolchain: stable
-        targets: ${{ matrix.target }}
     
     - name: Install Tauri CLI
       run: cargo install tauri-cli --version "^1.5"
@@ -130,7 +125,7 @@ jobs:
       uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: stable
-        targets: ${{ matrix.target }}
+        target: ${{ matrix.target }}
     
     - name: Install Tauri CLI
       run: cargo install tauri-cli --version "^1.5"
